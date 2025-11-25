@@ -1,0 +1,180 @@
+<div class="layout">
+    <app-sidebar class="sidebar"></app-sidebar>
+
+    <div class="container">
+
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" style="padding: 5px;">Control mantenimiento</li>
+                <li class="breadcrumb-item active" style="padding: 5px;" aria-current="page"> Vehiculos</li>
+            </ol>
+        </nav>
+
+
+        <div class="mb-3 d-flex justify-content-between">
+            <div>
+                <h5>Vehiculos</h5>
+            </div>
+
+            <div class="search-box">
+                <input type="text" class="form-control search-input" placeholder="Buscar" [(ngModel)]="busqueda">
+                <button class="btn search-btn"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+
+        <!-- Tabla -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Placa</th>
+                    <th>Próximo mantenimiento</th>
+                    <th>Estado</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let m of listaFiltrada; let i = index">
+                    <td>{{ m.id }}</td>
+                    <td>{{ m.placa }}</td>
+                    <td>{{ m.proximoMant }}</td>
+
+                    <td>
+                        <span class="estado-label" [ngClass]="{
+              'estado-mant': m.estado === 'En mantenimiento',
+              'estado-act': m.estado === 'Activo',
+              'estado-inac': m.estado === 'Inactivo'
+            }">
+                            {{ m.estado }}
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                                Opciones
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" (click)="Editardatos(m)" >Actualizar datos</a></li>
+                                <li><a class="dropdown-item" (click)="abrirEditarReg(m)">Registrar mantenimiento</a></li>
+                            </ul>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" #modal tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-card">
+
+                <form [formGroup]="form" (ngSubmit)="guardar()">
+
+                    <div class="modal-header modal-header-custom">
+                        <h5 class="modal-title">{{ tituloModal }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <!-- Placa -->
+                        <div class="mb-3">
+                            <label>Placa :</label>
+                            <input type="text" class="form-control" formControlName="placa" readonly>
+                        </div>
+
+                        <!-- Marca -->
+                        <div class="mb-3">
+                            <label>Marca :</label>
+                            <input type="text" class="form-control" formControlName="marca" readonly>
+                        </div>
+
+                        <!-- Modelo -->
+                        <div class="mb-3">
+                            <label>Modelo :</label>
+                            <input type="text" class="form-control" formControlName="modelo" readonly>
+                        </div>
+
+                        <!-- Tipo de mantenimiento -->
+                        <div class="mb-3">
+                            <label>Tipo de mantenimiento:</label>
+                            <select class="form-select" formControlName="tipo_mantenimiento">
+                                <option *ngFor="let t of tipos" [value]="t.id">
+                                    {{ t.nombre }}
+                                </option>
+                            </select>
+                        </div>
+
+                        <!-- Motivo -->
+                        <div class="mb-3">
+                            <label>Motivo:</label>
+                            <textarea class="form-control" rows="3" formControlName="detalles"
+                                placeholder="Detalle del mantenimiento">Detalle</textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger" [disabled]="form.invalid">Registrar</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL ACTUALIZAR DATOS -->
+<div class="modal fade" #modalActualizar tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-card">
+
+      <form [formGroup]="formActualizar" (ngSubmit)="guardarActualizacion()">
+
+        <div class="modal-header modal-header-custom">
+          <h5 class="modal-title">Actualizar datos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label>Fecha inicio:</label>
+            <input type="date" class="form-control" formControlName="fechaInicio">
+          </div>
+
+          <div class="mb-3">
+            <label>Fecha fin:</label>
+            <input type="date" class="form-control" formControlName="fecha_fin" >
+          </div>
+
+          <div class="mb-3">
+            <label>Próximo mantenimiento:</label>
+            <input type="date" class="form-control" formControlName="proximoMant" readonly>
+          </div>
+
+          <div class="mb-3">
+            <label>Observación adicional:</label>
+            <textarea class="form-control" rows="3" formControlName="detalle2"></textarea>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

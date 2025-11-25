@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  height: 100vh; /* toda la pantalla */
+}
+
+/* Sidebar fijo */
+.sidebar {
+  width: 250px; /* o el tamaño que tú usas */
+  flex-shrink: 0; /* evita que se encoja */
+}
+
+/* Contenido desplazado */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background: #f8f9fa; /* opcional */
+}

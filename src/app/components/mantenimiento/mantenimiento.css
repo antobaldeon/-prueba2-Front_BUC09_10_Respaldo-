@@ -1,0 +1,68 @@
+.layout {
+  display: flex;
+  height: 100vh; /* toda la pantalla */
+}
+
+/* Sidebar fijo */
+.sidebar {
+  width: 250px; /* o el tamaño que tú usas */
+  flex-shrink: 0; /* evita que se encoja */
+}
+
+/* Contenido desplazado */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background: #f8f9fa; /* opcional */
+}
+
+.modal-card {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.modal-header-custom {
+  background: #e63946;
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding-left: 15px;
+  padding-right: 5px;
+  width: 250px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.search-btn {
+  border: none;
+  background: none;
+}
+
+.estado-label {
+    padding: 4px 12px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  letter-spacing: 0.3px;
+}
+.estado-mant {
+  background-color: #ffcc00;
+  color: #663300;
+
+}
+.estado-act {
+  background-color: #4caf50;
+  color: white;
+}

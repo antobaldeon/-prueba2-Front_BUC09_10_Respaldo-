@@ -1,0 +1,117 @@
+<div class="layout">
+    <app-sidebar class="sidebar"></app-sidebar>
+
+        <div class="container">
+  <h1>Vehículos</h1>
+  <hr>
+
+  <div class="mb-3">
+    <button class="btn btn-sm btn-secondary me-2" (click)="listar()">Listar</button>
+    <button class="btn btn-sm btn-primary" (click)="abrirNuevo()">Agregar</button>
+  </div>
+
+  <table class="table table-striped w-75">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Placa</th>
+        <th>Modelo</th>
+        <th>Año</th>
+        <th>Volumen</th>
+        <th>Estado</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let v of vehiculos; let i = index">
+        <th>{{ i + 1 }}</th>
+        <td>{{ v.placa }}</td>
+        <td>{{ v.modelo }}</td>
+        <td>{{ v.anio }}</td>
+        <td>{{ v.volumen }}</td>
+        <td>{{ v.estado }}</td>
+        <td>
+          <button class="btn btn-sm btn-warning me-2" (click)="abrirEditar(v)">Editar</button>
+          <button class="btn btn-sm btn-danger" (click)="eliminar(v.id!)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" #modal tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="form" (ngSubmit)="guardar()">
+        
+        <div class="modal-header">
+          <h5 class="modal-title">{{ tituloModal }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <!-- Placa -->
+          <div class="mb-3">
+            <label>Placa</label>
+            <input type="text" formControlName="placa" class="form-control"
+                   placeholder="Ingrese placa">
+          </div>
+
+          <!-- Modelo -->
+          <div class="mb-3">
+            <label>Modelo</label>
+            <input type="text" formControlName="modelo" class="form-control"
+                   placeholder="Ingrese modelo del vehículo">
+          </div>
+
+          <!-- Año -->
+          <div class="mb-3">
+            <label>Año</label>
+            <input type="number" formControlName="anio" class="form-control"
+                   placeholder="Ingrese año">
+          </div>
+
+          <!-- Volumen -->
+          <div class="mb-3">
+            <label>Volumen</label>
+            <input type="number" formControlName="volumen" class="form-control"
+                   placeholder="Ingrese volumen (ej. 1.6)">
+          </div>
+
+          <!-- Estado ID -->
+          <div class="mb-3">
+            <label>Estado ID</label>
+            <input type="number" formControlName="estadoid" class="form-control"
+                   placeholder="Ingrese ID del estado">
+          </div>
+
+          <!-- Estado -->
+          <div class="mb-3">
+            <label>Estado</label>
+            <select formControlName="estado" class="form-select">
+              <option value="Disponible">Disponible</option>
+              <option value="En mantenimiento">En mantenimiento</option>
+              <option value="Inactivo">Inactivo</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" [disabled]="form.invalid">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+
+</div>

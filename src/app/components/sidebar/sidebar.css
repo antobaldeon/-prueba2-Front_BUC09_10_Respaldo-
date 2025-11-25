@@ -1,0 +1,111 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #ffffff;
+  color: #6d5e5e;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.nav-menu .logo {
+    padding: 0 15px px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+.btn-inicio {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-align: left;
+    padding: 8px 9px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 0;
+    font-size: small;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu .btn {
+    background-color: crimson;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 0;
+    font-size: small;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+
+}
+.nav-menu .btn:hover {
+    background-color: darkred;
+    color: white;
+}
+.nav-menu .btn_sub {
+    background-color: #000000;
+    color: #6d5e5e;
+    margin-left: 30px;
+    font-size: small;
+    margin-right: 10px;
+    gap: 8px;
+}
+.nav-menu .btn_sub:hover {
+    background-color: #333333;
+    color: white;
+}
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: small;
+    transition: background-color 0.3s ease;
+    gap: 8px
+    
+
+}
+.nav-config {
+    margin-top: auto;
+    padding: 10px;
+    border-top: 1px solid #dcdcdc;
+    flex-direction: column;
+    padding-top: 20px;
+    display: flex;
+    font-size: small;
+}
+.nav-config .btn-user {
+    background-color: #ffffff;
+    color: #444;
+    text-decoration: none;
+    text-align: left;
+    display: flex;
+    line-height: 1.2;
+
+    font-size: small;
+    padding: 5px 8px;
+    margin-bottom: 10px;
+    border-radius: 0;
+}
+.nav-config .nav-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.nav-user .user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
