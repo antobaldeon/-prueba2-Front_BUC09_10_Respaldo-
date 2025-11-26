@@ -1,18 +1,19 @@
 <div class="layout">
+    
     <app-sidebar class="sidebar"></app-sidebar>
 
     <div class="container">
-
-        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+        <div class="welcome-card p-3 shadow-sm rounded bg-white mb-4">
+         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item" style="padding: 5px;">Control mantenimiento</li>
-                <li class="breadcrumb-item active" style="padding: 5px;" aria-current="page"> Vehiculos</li>
+                <li class="breadcrumb-item active" style="padding: 5px;" aria-current="page"> Historial</li>
             </ol>
-        </nav>
+         </nav>
 
 
-        <div class="mb-3 d-flex justify-content-between">
+         <div class="mb-3 d-flex justify-content-between">
             <div>
                 <h5>Vehiculos</h5>
             </div>
@@ -21,10 +22,10 @@
                 <input type="text" class="form-control search-input" placeholder="Buscar" [(ngModel)]="busqueda">
                 <button class="btn search-btn"><i class="bi bi-search"></i></button>
             </div>
-        </div>
+           </div>
 
-        <!-- Tabla -->
-        <table class="table table-striped">
+         <!-- Tabla -->
+          <table class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -58,16 +59,17 @@
                                 Opciones
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" (click)="Editardatos(m)" >Actualizar datos</a></li>
-                                <li><a class="dropdown-item" (click)="abrirEditarReg(m)">Registrar mantenimiento</a></li>
+                                <li><a class="dropdown-item" (click)="Editardatos(m)">Actualizar datos</a></li>
+                                <li><a class="dropdown-item" (click)="abrirEditarReg(m)">Registrar mantenimiento</a>
+                                </li>
                             </ul>
                         </div>
                     </td>
 
                 </tr>
             </tbody>
-        </table>
-
+         </table>
+         </div>
     </div>
 
     <!-- MODAL -->
@@ -135,46 +137,46 @@
 
 <!-- MODAL ACTUALIZAR DATOS -->
 <div class="modal fade" #modalActualizar tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content modal-card">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-card">
 
-      <form [formGroup]="formActualizar" (ngSubmit)="guardarActualizacion()">
+            <form [formGroup]="formActualizar" (ngSubmit)="guardarActualizacion()">
 
-        <div class="modal-header modal-header-custom">
-          <h5 class="modal-title">Actualizar datos</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title">Actualizar datos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label>Fecha inicio:</label>
+                        <input type="date" class="form-control" formControlName="fechaInicio">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Fecha fin:</label>
+                        <input type="date" class="form-control" formControlName="fecha_fin">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Próximo mantenimiento:</label>
+                        <input type="date" class="form-control" formControlName="proximoMant" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Observación adicional:</label>
+                        <textarea class="form-control" rows="3" formControlName="detalle2"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                </div>
+
+            </form>
+
         </div>
-
-        <div class="modal-body">
-
-          <div class="mb-3">
-            <label>Fecha inicio:</label>
-            <input type="date" class="form-control" formControlName="fechaInicio">
-          </div>
-
-          <div class="mb-3">
-            <label>Fecha fin:</label>
-            <input type="date" class="form-control" formControlName="fecha_fin" >
-          </div>
-
-          <div class="mb-3">
-            <label>Próximo mantenimiento:</label>
-            <input type="date" class="form-control" formControlName="proximoMant" readonly>
-          </div>
-
-          <div class="mb-3">
-            <label>Observación adicional:</label>
-            <textarea class="form-control" rows="3" formControlName="detalle2"></textarea>
-          </div>
-
-        </div>
-
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
-        </div>
-
-      </form>
-
     </div>
-  </div>
 </div>

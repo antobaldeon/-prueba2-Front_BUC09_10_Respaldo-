@@ -1,0 +1,71 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Sidebar fijo */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+/* Contenido al costado del sidebar */
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  background: #f8f9fa;
+}
+
+/* Contador rojo */
+.counter-box {
+    min-width: 130px;
+    text-align: center;
+}
+
+/* Tarjeta del módulo */
+.module-card {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Ajuste general */
+body {
+    
+}
+
+/* Card del módulo */
+.module-card {
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.25s;
+    cursor: pointer;
+    min-height: 110px;
+}
+
+.module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Icono */
+.module-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    background: #f1f3f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #d62839; /* tu rojo SysFlex */
+}
+
+.module-card h6 {
+    font-size: 1rem;
+}

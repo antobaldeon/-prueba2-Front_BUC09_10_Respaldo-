@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TipoMantenimientoService {
 
-  private url = 'http://localhost:8080/api/v1/tipomant'; // <-- Ajusta tu endpoint real
+  private url = 'http://localhost:8080/api/v1/tipomant'; 
 
   constructor(private http: HttpClient) {}
 

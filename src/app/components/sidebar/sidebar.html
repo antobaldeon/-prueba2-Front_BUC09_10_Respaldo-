@@ -1,56 +1,74 @@
 <aside class="sidebar">
   <nav class="nav-menu">
 
-    <a href="/">
+    <a href="">
       <h2 style="color: crimson; text-decoration: none  ; padding-left: 50px;">SysFLex</h2>
-   
-    </a>
-    <a href="" class="btn-inicio " data-bs-toggle="collapse" role="button" aria-expanded="false">
-      <i class="bi bi-house" style="width: 50px; padding-right: 5px;" ></i>
-      <span> Inicio</span>
 
+    </a>
+    <a href="/" class="btn-inicio "  role="button" aria-expanded="false">
+      <i class="bi bi-house" style="width: 50px; padding-right: 5px;"></i>
+      <span> Inicio</span>
     </a>
 
     <a href="#/registrar-servicio" class="btn" data-bs-toggle="collapse" role="button" aria-expanded="false">
-      <i class="bi bi-file-earmark-plus" style="padding-right: 5px;" ></i>
+      <i class="bi bi-file-earmark-plus" style="padding-right: 5px;"></i>
       <span>Registrar Servicio</span>
 
     </a>
 
-    <a href="#/programacion" class="btn" data-bs-toggle="collapse" role="button" aria-expanded="false">
-      <i class="bi bi-calendar-check" style="padding-right: 5px;" ></i>
-      <span>Programación</span>
+    <a href="#collapseServicio" class="btn" data-bs-toggle="collapse" role="button" aria-expanded="false">
+      <i class="bi bi-calendar-check" style="padding-right: 5px;"></i>
+      <span>Programacion</span>
       <span class="arrow"><i class="fas fa-chevron-right"></i></span>
     </a>
+    <div class="collapse btn_sub" id="collapseServicio">
+
+      <a routerLink="/servicio" class="nav-item submenu-item">
+        <i class="bi bi-car-front"></i>
+        Servicio
+      </a>
+
+    </div>
 
     <a href="#/entregas" class="btn" data-bs-toggle="collapse" role="button" aria-expanded="false">
-      <i class="bi bi-clipboard-check"style="padding-right: 5px;" ></i>
+      <i class="bi bi-clipboard-check" style="padding-right: 5px;"></i>
       <span>Entregas</span>
       <span class="arrow"><i class="fas fa-chevron-right"></i></span>
     </a>
 
-    <a href="#/cierre" class="btn" data-bs-toggle="collapse" role="button" aria-expanded="false">
-      <i class="bi bi-credit-card" style="padding-right: 5px;" ></i>
+    <a href="#collapseCierre" class="btn" data-bs-toggle="collapse" role="button" aria-expanded="false">
+      <i class="bi bi-credit-card" style="padding-right: 5px;"></i>
       <span>Cierre y Liquidacion</span>
       <span class="arrow"><i class="fas fa-chevron-right"></i></span>
     </a>
+    <div class="collapse btn_sub" id="collapseCierre">
+
+      <a routerLink="/preliquidacion" class="nav-item submenu-item">
+        <i class="bi bi-car-front"></i>
+        Generar preliquidacion
+      </a>
+
+    </div>
 
     <a class="btn" data-bs-toggle="collapse" href="#collapseMantenimiento" role="button" aria-expanded="false"
       aria-controls="collapseMantenimiento">
-      <i class="bi bi-wrench-adjustable-circle" style="padding-right: 5px;" ></i>
-      <span>Mantenimiento</span>
+      <i class="bi bi-wrench-adjustable-circle" style="padding-right: 5px;"></i>
+      <span>Control de mantenimiento</span>
     </a>
     <div class="collapse btn_sub" id="collapseMantenimiento">
-      <a routerLink="/mantenimiento" class="nav-item">
-        <i class="bi bi-car-front" style="padding-right: 5px;" ></i>
+
+      <a routerLink="/mantenimiento" class="nav-item submenu-item">
+        <i class="bi bi-car-front"></i>
         Mantenimientos
       </a>
-      
-      <a routerLink="/vehiculo" class="nav-item">
-        <i class="bi bi-car-front" style="padding-right: 5px;" ></i>
-        Vehiculo
+
+      <a routerLink="/vehiculo" class="nav-item submenu-item">
+        <i class="bi bi-clock-history"></i>
+        Historial
       </a>
+
     </div>
+
 
   </nav>
   <div class="nav-config">

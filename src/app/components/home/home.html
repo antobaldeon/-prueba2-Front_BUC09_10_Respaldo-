@@ -1,10 +1,101 @@
 <div class="layout">
-  
-  <!-- Sidebar fijo -->
-  <app-sidebar></app-sidebar>
 
-  <!-- Aquí Angaular cambia las páginas -->
-  <div class="content">
+  <!-- Sidebar fijo -->
+  <app-sidebar class="sidebar"></app-sidebar>
+
+  <!-- CONTENIDO -->
+  <div class="content-area">
+
+    <!-- Tarjeta de bienvenida -->
+    <div class="welcome-card p-3 shadow-sm rounded bg-white mb-4">
+      <h5 class="fw-semibold">¡Bienvenida, Antonella Baldeon!</h5>
+      <small class="text-muted">Secretaria | Gestiona tus operaciones desde aquí</small>
+
+      <div class="d-flex gap-3 mt-3">
+
+        <div class="counter-box bg-danger text-white px-3 py-2 rounded">
+          <span class="fw-bold">0</span><br>
+          <small>Alertas de vehiculos en mantenimiento</small>
+        </div>
+
+        <div class="counter-box bg-danger text-white px-3 py-2 rounded">
+          <span class="fw-bold">5</span><br>
+          <small>Preliquidacion pendiente</small>
+        </div>
+
+        <div class="counter-box bg-danger text-white px-3 py-2 rounded">
+          <span class="fw-bold">3</span><br>
+          <small>Preliquidacion por generar</small>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MODULOS -->
+    <h5 class="fw-semibold mb-3"> Tus Acciones</h5>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="module-card p-3 shadow-sm rounded bg-white d-flex align-items-center gap-3">
+
+          <div class="module-icon">
+            <i class="bi bi-clipboard-check"></i>
+          </div>
+
+          <div>
+            <h6 class="fw-semibold mb-1">Hoja de Tracking</h6>
+            <small class="text-muted">Gestiona hoja de tracking</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+        <div class="module-card p-3 shadow-sm rounded bg-white d-flex align-items-center gap-3">
+
+          <div class="module-icon">
+            <i class="bi bi-credit-card"></i>
+          </div>
+
+          <div>
+            <h6 class="fw-semibold mb-1">Preliquidacion</h6>
+            <small class="text-muted">Gestiona la preliquidacion de servicios</small>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="module-card p-3 shadow-sm rounded bg-white d-flex align-items-center gap-3">
+
+          <div class="module-icon">
+            <i class="bi bi-truck"></i>
+          </div>
+          <div>
+            <h6 class="fw-semibold mb-1">Mantenimiento de los vehiculo</h6>
+            <small class="text-muted">Registra mantenimientos</small>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTONES INFERIORES -->
+    <div class="d-flex justify-content-between mt-5">
+
+      <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+        <i class="bi bi-telephone"></i> Contactenos
+      </button>
+
+      <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+        <i class="bi bi-headset"></i> Mesa de Ayuda
+      </button>
+
+    </div>
+
   </div>
 
 </div>

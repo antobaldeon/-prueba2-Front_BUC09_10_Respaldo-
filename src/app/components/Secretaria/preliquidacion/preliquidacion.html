@@ -1,0 +1,55 @@
+<div class="layout">
+    
+    <app-sidebar class="sidebar"></app-sidebar>
+        <app-sidebar class="sidebar"></app-sidebar>
+
+    <div class="content px-4">
+
+        <h3 class="titulo-modulo mb-3">Servicios</h3>
+
+        <!-- BUSCADOR -->
+        <div class="d-flex gap-2 mb-4">
+            <div class="input-group buscador">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="text"  placeholder="Buscar por código o fecha..."
+                       class="form-control border-start-0 shadow-none">
+            </div>
+
+            <button class="btn btn-outline-dark">Buscar</button>
+        </div>
+
+        <!-- TABLA -->
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Código</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Costo Total</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let s of  ">
+                    <td>s.codigo</td>
+                    <td>s.cliente</td>
+                    <td>s.fecha</td>
+                    <td>s.costo </td>
+
+                    <td>
+                        <span class="estado-tag">s.estado </span>
+                    </td>
+
+                    <td>
+                        <a class="link-detalles" >Detalles</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>

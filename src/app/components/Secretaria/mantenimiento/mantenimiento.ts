@@ -1,12 +1,12 @@
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
-import { Sidebar } from '../sidebar/sidebar';
+import { Sidebar } from '../../sidebar/sidebar';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Mantenimiento } from '../../models/mantenimiento';
-import { MantenimientoService } from '../../services/mantenimiento';
-import { VehiculoService } from '../../services/vehiculo';
-import { TipoMantenimientoService } from '../../services/tipo-mantenimiento';
-import { TallerService } from '../../services/taller';
+import { Mantenimiento } from '../../../models/mantenimiento';
+import { MantenimientoService } from '../../../services/mantenimiento';
+import { VehiculoService } from '../../../services/vehiculo';
+import { TipoMantenimientoService } from '../../../services/tipo-mantenimiento';
+import { TallerService } from '../../../services/taller';
 
 @Component({
   selector: 'app-mantenimiento',

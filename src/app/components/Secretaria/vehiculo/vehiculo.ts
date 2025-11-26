@@ -1,10 +1,10 @@
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
-import { Sidebar } from '../sidebar/sidebar';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Vehiculo } from '../../models/vehiculo';
-import { VehiculoService } from '../../services/vehiculo';
-import { Estado } from '../../models/estado';
+import { Vehiculo } from '../../../models/vehiculo';
+import { VehiculoService } from '../../../services/vehiculo';
+import { Sidebar } from '../../sidebar/sidebar';
+
 
 @Component({
   selector: 'app-vehiculo',
@@ -44,7 +44,7 @@ export class VehiculoComponent {
 
   listar() {
     this.vehiculoService.getAll()
-      .subscribe(response => this.vehiculos = response);
+      .subscribe(Response => this.vehiculos = Response);
   }
 
   abrirNuevo() {
